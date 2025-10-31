@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "npx cypress test",
+    "test:cloud": "npx cypress run --record --key d2eb7ba5-f2d9-4976-b997-ae29528ad6b1",
+    "open": "npx cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^15.5.0"
+  }
+}
