@@ -41,7 +41,3 @@ Cypress.Commands.add('login', (email,password) => {
     cy.visit("/");
     // cy.contains("Guest log in").click()
 });
-
-Cypress.Commands.add('getById', function (id) {
-    return cy.get(`#${id}`)
-})

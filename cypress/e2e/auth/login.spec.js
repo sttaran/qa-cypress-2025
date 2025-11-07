@@ -15,14 +15,22 @@ describe("Authentication - Login", () => {
         // cy.get(".btn-primary").click()
         cy.get(".btn-primary").as("loginBtn");
         cy.get("@loginBtn").click();
-
-        cy.get('.modal-content').within(($form)=>{
+// div .content
+// div.content
+// input[name="signupName"]
+        cy.get('.modal-content').within(($form)=>{ // .modal-content .content
             cy.wrap($form).should("have.class", "modal-content");
             cy.get("#signupName").type(userData.name)
             cy.get("#signupLastName").type(userData.lastName)
             cy.get("#signupEmail").type(userData.email)
             cy.get("#signupPassword").type(userData.password)
             cy.get("#signupRepeatPassword").type(userData.password)
+
+            cy.get("#signupRepeatPassword")
+                .type(userData.password)
+                .should("have.value", userData.password)
+                .and('be.enabled')
+
 
             cy.get(".btn-primary").click()
         })

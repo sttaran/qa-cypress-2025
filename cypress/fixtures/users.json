@@ -1,0 +1,20 @@
+[
+  {
+    "title": "invalid email format",
+    "input": {
+      "email": "test1test.com"
+    },
+    "expected": {
+      "message": "Email should be valid"
+    }
+  },
+  {
+    "title": "too long email address",
+    "input": {
+      "email": "tesssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssst1test.com"
+    },
+    "expected": {
+      "message": "Email should be at most 100 characters long"
+    }
+  }
+]
