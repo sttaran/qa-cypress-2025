@@ -1,13 +1,6 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-    reporter: 'mochawesome',
-    reporterOptions: {
-        reportDir: 'cypress/results',
-        overwrite: false,
-        html: false,
-        json: true,
-    },
     projectId: "pqvtys",
     defaultBrowser: "chrome",
     viewportHeight: 1024,
@@ -17,12 +10,17 @@ module.exports = defineConfig({
         openMode: 0,
     },
     defaultCommandTimeout: 7000,
-    env: {},
+    env: {
+        BASIC_AUTH_USERNAME: "guest1",
+        BASIC_AUTH_PASSWORD: "welcome2qauto",
+    },
     e2e: {
       baseUrl: "https://qauto.forstudy.space",
       watchForFileChanges: false,
       specPattern: "cypress/e2e/**/*.{spec,test}.{js,jsx,ts,tsx}",
       experimentalRunAllSpecs: true,
-      setupNodeEvents(on, config) {},
+      setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
     },
 });
