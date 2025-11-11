@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-describe("Authentication - Login", () => {
+describe("@Auth Authentication - Login", () => {
     const password = `Qwerty${faker.number.int({min: 100, max: 999})}`
     const userData = {
         "name": faker.person.firstName(),
@@ -27,7 +27,6 @@ describe("Authentication - Login", () => {
             cy.get("#signupRepeatPassword").type(userData.password)
 
             cy.get("#signupRepeatPassword")
-                .type(userData.password)
                 .should("have.value", userData.password)
                 .and('be.enabled')
 
